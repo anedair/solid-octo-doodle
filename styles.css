@@ -1,0 +1,120 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;  /* Allows for positioning of child elements */
+    height: 100%; /* Set height to 100% to allow background to fill entire page */
+    background-color: #f8d5e5; /* Pastel pink background for the whole page */
+    color: black; /* Makes the text readable over the background */
+}
+
+/* Create a pseudo-element for the background GIF */
+body::before {
+    content: '';  /* Required for pseudo-elements */
+    position: fixed; /* Fixed position to keep the GIF fixed while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.pinimg.com/originals/71/97/3f/71973f6d71e09d0f816d01f1c673549e.gif');
+    background-size: 100px 100px; /* Makes the GIF a small repeating pattern */
+    background-repeat: repeat; /* Repeats the GIF */
+    background-position: top left;
+    opacity: 0.4; /* Adjust the opacity of the GIF for translucency */
+    z-index: -1; /* Places the GIF behind all other content */
+}
+
+/* Translucent Box Styling */
+.translucent-box {
+    position: absolute; /* Makes the boxes moveable */
+    background-color: rgba(255, 255, 255, 0.6); /* White background with transparency */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.translucent-box img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Header Styling */
+header {
+    background-color: #f7a7c7; /* Darker pastel pink background for the header */
+    color: white; /* Text color to make the header text stand out */
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Content Styling */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Flexbox container for the header content */
+.header-content {
+    display: flex;
+    align-items: center; /* Aligns the image and the text vertically */
+    justify-content: center; /* Centers the content horizontally */
+}
+
+/* Styling for the GIF in the header */
+.header-gif {
+    width: auto; /* Adjust the width of the GIF to make it small */
+    height: 100px; /* Maintains aspect ratio */
+    margin-right: 10px; /* Adds some space between the GIF and the title */
+}
+
+/* Styling for the Notes app icon */
+.app-icon {
+    width: 100px; /* Size of the icon */
+    height: auto; /* Keep aspect ratio */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    transition: transform 0.3s ease; /* Add a smooth effect when hovered */
+}
+
+.app-icon:hover {
+    transform: scale(1.2); /* Slightly enlarge the icon when hovered */
+}
+
+/* Styling for the title in the translucent box */
+.translucent-box h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Flexbox container for note previews */
+.note-preview {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background for each note */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    cursor: pointer; /* Indicates it's clickable */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.note-preview:hover {
+    background-color: rgba(200, 200, 200, 0.8); /* Darkens the background on hover */
+    transform: scale(1.05); /* Slightly enlarges the note preview */
+}
+
+/* Styling for the inner content of the note preview */
+.note-inner-box {
+    text-align: left;
+}
+
+.note-preview p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
